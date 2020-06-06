@@ -1,0 +1,435 @@
+html {
+    height: 100%;
+}
+
+#app-calendar{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-template-rows: repeat(5,1fr);
+  height: 100%;
+}
+  body {
+    height: 100%;
+    margin: 0;
+    background: #2e3233;
+  }
+  
+  .rain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .rain.back-row {
+    display: none;
+    z-index: 1;
+    bottom: 60px;
+    opacity: 0.5;
+  }
+  
+  body.back-row-toggle .rain.back-row {
+    display: block;
+  }
+  
+  .drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+  }
+  
+  @keyframes drop {
+    0% {
+      transform: translateY(0vh);
+    }
+    75% {
+      transform: translateY(90vh);
+    }
+    100% {
+      transform: translateY(90vh);
+    }
+  }
+  
+  .stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 
+  255, 255, 0.25));
+    animation: stem 0.5s linear infinite;
+  }
+  
+  @keyframes stem {
+    0% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .splat {
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: none;
+  }
+  
+  body.splat-toggle .splat {
+    display: block;
+  }
+  
+  @keyframes splat {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    90% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+  
+  
+  body { 
+      background-color: #000000;
+      animation: fadeInAnimation ease 3s; 
+      animation-iteration-count: 1; 
+      animation-fill-mode: forwards; 
+  } 
+  @keyframes fadeInAnimation { 
+      0% { 
+          opacity: 0; 
+      } 
+      100% { 
+          opacity: 1; 
+      } 
+  }  
+      #after{
+        content: "";
+        display: block;
+        width: 2px;
+        height: 90px;
+        background-color: rgb(168, 178, 209);
+        margin: 0 auto;
+          
+      }
+  
+      .b{
+        min-height: 80vh;
+      }
+      
+      #imgBio{
+        float: left;
+        display: block;
+        margin-left: 15%;
+        margin-right: auto;
+        width: 50%;
+        
+      }
+      #ss{
+        float: left;
+        display: block;
+        margin: 1.5em;
+        width: 450px;
+      }
+  
+      #bioWords{
+        width: 500px;
+        float: right;
+        text-align: left;
+        margin-top: 10vh;
+      }
+  
+      #side{
+          width: 40px;
+          position: fixed;
+          bottom: 0px;
+          left: 40px;
+          right: auto;
+          z-index: 10;
+          color: rgb(168, 178, 209);
+      }
+  
+      .afterWords{
+        content: "";
+        display: block;
+        background-color: #F0F0F0;
+      }
+  
+      li{
+          list-style: none;
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+  
+      a{
+          color: white;
+      }
+      #header{
+        max-width: 1000px;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+  
+      #aboutMe{
+        color: #f8f8f8;
+        font-weight: 200;
+        position: relative;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        white-space: nowrap;
+        font-size: 32px;
+      }
+      #bio{
+        color: #f8f8f8;
+        font-weight: 200;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: flex-start;
+      }
+      @import url('https://fonts.googleapis.com/css?family=Abel');
+  
+  
+  
+  
+  .card {
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+    float: left;
+    margin-top: 100px;
+  }
+  .card h1 {
+    text-align: center;
+  }
+  
+  .card .additional {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(#242726, #242726);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .navbar-toggler-icon{
+    width: 50px;
+    height: 50px;
+  }
+  .navbar{
+    width:100%;
+    background-color: #2e3233;
+  }
+  .card .additional .user-card {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  
+  .card .additional .user-card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -2px;
+    height: 80%;
+    border-left: 2px solid rgba(0,0,0,0.025);
+  }
+  
+  .card .additional .user-card .level,
+  .card .additional .user-card .points {
+    top: 15%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.15);
+    padding: 0.125rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  
+  .card .additional .user-card .points {
+    top: 85%;
+  }
+  
+  .card .additional .user-card svg {
+    top: 50%;
+  }
+  
+  .card .additional .more-info {
+    width: 300px;
+    float: left;
+    position: absolute;
+    left: 150px;
+    height: 100%;
+  }
+  
+  .card .additional .more-info h1 {
+    color: #fff;
+    margin-bottom: 0;
+  }
+  
+  
+  
+  .card .additional .coords {
+    margin: 0 1rem;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  
+  .card .additional .coords span + span {
+    float: right;
+  }
+  
+  .card .additional .stats {
+    font-size: 2rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+  
+  .card .additional .stats div.value.infinity {
+    font-size: 2.5rem;
+  }
+  
+  .card .general {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
+  }
+  
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+  
+  button:hover{
+    background-color:rgb(53, 151, 102);
+    
+  }
+  
+  #otherside{
+    width: 40px;
+    bottom: 0px;
+    position: fixed;
+    left: auto;
+    right: 40px;
+    z-index: 10;
+    color: rgb(168, 178, 209);
+  
+  
+  }
+      
+    @media screen and (min-width: 0px) and (max-width: 1200px){
+      #side{
+        display: none;
+      }
+  
+      #headerDrop{
+        width: 200px;
+      }
+  
+      #otherside{
+        display: none;
+      }
+  
+      #imgBio{
+        float: none;
+        width: 30%;
+        margin-left: auto;
+      }
+  
+      #bioWords{
+        width: auto;
+        float: none;
+        margin-top: 5vh;
+      }
+  
+      .cc{
+        max-width: min-content;
+      }
+  
+      .b{
+        min-height: 50vh;
+      }
+  
+      #ss{
+        display: none;
+      }
+    }
+  
