@@ -377,6 +377,12 @@ html {
     right: 1rem;
     font-size: 0.9em;
   }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   
   button:hover{
     background-color:rgb(53, 151, 102);
