@@ -40,9 +40,9 @@ myImage.addEventListener("click", () => {
   const mySrc = myImage.getAttribute("src");
   const consoleLog = document.querySelector("p");
   if (mySrc === "images/bae.png") {
-    myImage.setAttribute("src", "images/curl.png");
+    myImage.setAttribute("src", "images/save.jpg");
   } else {
-    myImage.setAttribute("src", "images/bae.png");
+    myImage.setAttribute("src", "me.jpg");
   }
 });
 
@@ -61,7 +61,7 @@ function checkList(){
 }
 function reqFlowers(){
   const flw = document.querySelector("img");
-  const myRequest = new Request("images/flowers.jpg");
+  const myRequest = new Request("sum.jpg");
 
   fetch(myRequest)
     .then((response) => {
